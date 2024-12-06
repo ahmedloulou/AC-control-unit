@@ -1,0 +1,7 @@
+Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price (EGP)
+Microcontroller,ATmega32-16AU SMD IC TQFP-44 (10x10),1,TEM,ATmega32-16AU,https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/Atmel-8226-ZigBit-2.4GHz-Wireless-Modules-ATZB-24-A2B0_Datasheet.pdf,265,265
+LCD,Character LCD 2x16 with blue backlight,1,Hitachi,HD44780,https://circuitdigest.com/article/16x2-lcd-display-module-pinout-datasheet,75,75
+PCB,Printed circuit board (FR4 Circuit Board 10x7 cm),1,N/A,N/A,N/A,15,15
+Copper Wire,Copper PCB Soldering wire 0.10mm,1,PPA,B09PZ9QVTI,https://www.canman.ch/wp-content/uploads/2017/07/Copper_Wire_Specification.pdf,12,12
+Digital Temperature Sensor,DS18B20,1,Makers Electronics,DS18B20,https://www.analog.com/media/en/technical-documentation/datasheets/DS18B20.pdf,50,50
+Motor Driver,L9110,1,Future Electronics,L9110,https://www.laskakit.cz/user/related_files/19110_2_channel_motor_driver.pdf,60,60
