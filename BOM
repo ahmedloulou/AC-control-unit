@@ -1,0 +1,11 @@
+Part,Description,Quantity,Manufacturer,Part Number,Datasheet,Price (EGP),Total Price
+Arduino UNO,Arduino uno,1,Arduino,A000066,https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf,450,450
+DC motor,mini dc gearbox with back shift,1,Hanshon Technology,FAM1029,https://hanshontec.com/dataspecs/motor_fan/Dual%20Shaft%20Mini%20Gear%20Motor.pdf,85,85
+Motor driver,L298,1,Hanshon Technology,L298N,https://hanshontec.com/dataspecs/module/L298N%20Motor%20Gear%20Driver.pdf,125,125
+Switch,Tactile push button switch,3,Multicomp,MCDTS2-4N,https://www.farnell.com/datasheets/1662341.pdf,2,6
+Jumper wires,Male to female And male to male,set,BPS,ZW-MM-20,https://www.eu.mouser.com/datasheet/2/58/BPS-DAT-(KIT-ZW-x4)-Datasheet-1282851.pdf,30,30
+Breadboard,Bread board 840 pin,1,BPS,BB400,https://www.mouser.com/datasheet/2/58/BPS-DAT-(BB400)-Datasheet-932623.pdf,50,50
+LCD shield,16*2 LCD shield with keypad,1,DFrobot,DFR0009,https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/DFR0009_Web.pdf,150,150
+Temperature sensor,LM35,1,Texas instruments,LM35DZ,https://www.alldatasheet.com/datasheet-pdf/view/517588/TI/LM35.html,175,175
+Battery,9V,1,Varta,4922,https://www.mega-piles.com/im/VARTA-6LR61-9V-580mAh-HIGH-ENERGY.pdf,35,35
+Battery clip,-,-,-,MC002493,https://www.farnell.com/datasheets/3179133.pdf,9,9
