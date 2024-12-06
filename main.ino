@@ -13,11 +13,14 @@ int main(void) {
   unsigned short upperlimit = 700;
   unsigned short lowerlimit = 400;
   unsigned char buffer[4];
+  unsigned char control_limit = 0;
 
   DDRD &= ~(1 << PD0);
   PORTD |= (1 << PD0);
   DDRB &= ~(1 << PB4);
   PORTB |= (1 << PB4);
+  DDRD &= ~(1 << PD2);
+  PORTD |= (1 << PD2);
 
   Adc_Init();
   Uart_Init();
@@ -43,11 +46,25 @@ int main(void) {
     LCD_String(buffer);
 
     if (((PIND >> 0) & 1) == 0) {
-      upperlimit -= 10;
+      if (control_limit == 0) {
+        upperlimit -= 10;
+      } else {
+        lowerlimit -= 10;
+      }
       _delay_ms(1000);
     }
+
     if (((PINB >> 4) & 1) == 0) {
-      lowerlimit += 10;
+      if (control_limit == 0) {
+        upperlimit += 10;
+      } else {
+        lowerlimit += 10;
+      }
+      _delay_ms(1000);
+    }
+
+    if (((PIND >> 2) & 1) == 0) {
+      control_limit = !control_limit;
       _delay_ms(1000);
     }
 
