@@ -19,8 +19,8 @@ int main(void) {
   PORTD |= (1 << PD0);
   DDRB &= ~(1 << PB4);
   PORTB |= (1 << PB4);
-  DDRD &= ~(1 << PD2);
-  PORTD |= (1 << PD2);
+  DDRD &= ~(1 << PB5);
+  PORTD |= (1 << PB5);
 
   Adc_Init();
   Uart_Init();
@@ -45,7 +45,7 @@ int main(void) {
     itoa(lowerlimit, buffer, 10);
     LCD_String(buffer);
 
-    if (((PIND >> 0) & 1) == 0) {
+    if (((PINB >> 5) & 1) == 0) {
       if (control_limit == 0) {
         upperlimit -= 10;
       } else {
@@ -63,25 +63,25 @@ int main(void) {
       _delay_ms(1000);
     }
 
-    if (((PIND >> 2) & 1) == 0) {
+    if (((PIND >> 0) & 1) == 0) {
       control_limit = !control_limit;
       _delay_ms(1000);
     }
 
     if (adcreading >= lowerlimit && adcreading < upperlimit) {
+      PORTD &= ~(1 << 2);
       LCD_Command(0x8E);
       LCD_String("OK");
-      _delay_ms(1000);
       DC_Start(0, DIRECTION_CW, 0);
-      _delay_ms(500);
+      _delay_ms(1000);
       DC_Stop(0);
       _delay_ms(1000);
     } else {
+      PORTD |= (1 << 2);
       LCD_Command(0x8D);
       LCD_String("NOK");
-      _delay_ms(1000);
       DC_Start(0, DIRECTION_CCW, 0);
-      _delay_ms(500);
+      _delay_ms(1000);
       DC_Stop(0);
       _delay_ms(1000);
     }
