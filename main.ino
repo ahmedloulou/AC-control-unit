@@ -13,24 +13,25 @@ int main(void) {
   unsigned short upperlimit = 700;
   unsigned short lowerlimit = 400;
   unsigned char buffer[4];
-  unsigned char control_limit = 0;
+  unsigned char isUpperLimitSelected = 1;
 
   DDRD &= ~(1 << PD0);
   PORTD |= (1 << PD0);
   DDRB &= ~(1 << PB4);
   PORTB |= (1 << PB4);
-  DDRD &= ~(1 << PB5);
-  PORTD |= (1 << PB5);
+  DDRB &= ~(1 << PB5);
+  PORTB |= (1 << PB5);
 
   Adc_Init();
   Uart_Init();
   LCD_Init();
 
   while (1) {
-    _delay_ms(200);
-
+    _delay_ms(100);
+    
     adcreading = Adc_ReadChannel(1);
     itoa(adcreading, buffer, 10);
+
     Uart_SendString(buffer, 4);
     Uart_SendChar('\n');
 
@@ -38,34 +39,41 @@ int main(void) {
     LCD_String("Sensor: ");
     LCD_String(buffer);
     LCD_Command(0xC0);
-    itoa(upperlimit, buffer, 10);
     LCD_String("UL: ");
+    itoa(upperlimit, buffer, 10);
     LCD_String(buffer);
     LCD_String("  LL: ");
     itoa(lowerlimit, buffer, 10);
     LCD_String(buffer);
 
-    if (((PINB >> 5) & 1) == 0) {
-      if (control_limit == 0) {
-        upperlimit -= 10;
-      } else {
-        lowerlimit -= 10;
-      }
-      _delay_ms(1000);
+    if (isUpperLimitSelected) {
+      LCD_Command(0xCF);
+    } else {
+      LCD_Command(0xC8);
     }
 
-    if (((PINB >> 4) & 1) == 0) {
-      if (control_limit == 0) {
+    if (((PIND >> 0) & 1) == 0) {
+      isUpperLimitSelected = !isUpperLimitSelected;
+      LCD_Command(0x0E);
+      _delay_ms(500);
+    }
+    
+    if (((PINB >> 5) & 1) == 0) {
+      if (isUpperLimitSelected) {
         upperlimit += 10;
       } else {
         lowerlimit += 10;
       }
-      _delay_ms(1000);
+      _delay_ms(100);
     }
-
-    if (((PIND >> 0) & 1) == 0) {
-      control_limit = !control_limit;
-      _delay_ms(1000);
+    
+    if (((PINB >> 4) & 1) == 0) {
+      if (isUpperLimitSelected) {
+        upperlimit -= 10;
+      } else {
+        lowerlimit -= 10;
+      }
+      _delay_ms(100);
     }
 
     if (adcreading >= lowerlimit && adcreading < upperlimit) {
