@@ -4,10 +4,10 @@ start
 :initialize_system;
 repeat
 if (upperlimit > temperature value > lowerliimit) then (yes)
-  : motor rotates anticlockwise, display NOK on lcd, red led on;
+  : motor rotates anticlockwise, display NOK on lcd, ;
 endif 
 if (temperature value out of range) then (yes)
-  :motor rotates anticlockwise, display OK on lcd, green led on;
+  :motor rotates anticlockwise, display OK on lcd,;
 endif 
 if (button is pressed) then (yes)
   :change the limit ;
