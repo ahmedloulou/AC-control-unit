@@ -1,9 +1,8 @@
 #ifndef __DC_MOTOR
 #define __DC_MOTOR
-
 typedef enum {
-    DIRECTION_CW = 0,
-    DIRECTION_CCW
+    turnclockwise= 0,
+    turnanticlockwise
 } tenuDirection;
 
 void DC_Init();
