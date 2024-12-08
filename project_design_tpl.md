@@ -92,12 +92,19 @@ If there is a complex file structure e.g. more than one c-file or more than two 
 ```plantuml
 @startuml
 package "pkg" {
-    [Adc_pot.ino].>[Adc_pot.h] : includes
+    [Aanalogdigital.ino]...>[analogdigital.h] : includes
     [Lcd.ino]...>[Lcd.h] : includes
     [Uart.ino]...>[Uart.h] : includes
+    [I2C.ino]...>[I2C.h] : includes
+    [PWM.ino]...>[PWM.h] : includes
+    [motor.ino]...>[motor.h] : includes
+    [ACcontrolUnit.ino] --> [analogdigital.h] : includes
+    [ACcontrolUnit.ino] --> [Lcd.h] : includes
+    [ACcontrolUnit.ino] --> [Uart.h] : includes
+    [ACcontrolUnit.ino] --> [I2C.h] : includes
+    [ACcontrolUnit.ino] --> [PWM.h] : includes
+    [ACcontrolUnit.ino] --> [motor.h] : includes
     interface Interf3
-    note left of Lcd.ino: A top note
-    Adc_pot.ino ..> Interf3 : internal interface
 }
 @enduml
 ```
