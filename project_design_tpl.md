@@ -72,13 +72,19 @@ Typically a module consists of C and H files but other file types may exist. Lis
 
 | File name | Contents                             |
 |-----------|--------------------------------------|
-| analogdigital.h | header for adc functions        |
-| Lcd.h     | header for lcd functions                |
-| Uart.h    | header for uart communications functions |
-| Aanalogdigital.ino | Includes all adc functions and initlization         |
-| Lcd.ino    | Includes all Lcd functions and initlization                |
-| Uart.ino   | Includes all uart communications functions and initlization |
 | ACcontrolUnit.ino   | Includes the main code for the apllication |
+| analogdigital.h | header for adc functions        |
+| Aanalogdigital.ino | Includes all adc functions and initlization         |
+| LCD.h     | header for lcd functions                |
+| LCD.ino    | Includes all Lcd functions and initlization                |
+| Uart.h    | header for uart communications functions |
+| Uart.ino   | Includes all uart communications functions and initlization |
+| I2C.h | header the inisialization of the I2C communication       |
+| I2C.ino | include all functions required in the I2C        |
+| PWM.h | header for the PWM functions        |
+| PWM.ino | includes all pwm functions required     |
+| Motor.h | header for the motor functions        |
+| Motor.ino | includes all motor functions required to make the motor spin       |
 ### Include Structure
 
 If there is a complex file structure e.g. more than one c-file or more than two h-files use a diagram to explain the relationship between the source and dependent include files.
