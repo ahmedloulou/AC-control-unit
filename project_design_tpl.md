@@ -53,11 +53,10 @@ Indicate constraints of the low level design and any assumptions appropriate for
 (*) --> initialization
 --> configuration
 if upperlimit >value > lowerlimit 
-  --> display on lcd "OK"
+  --> display on lcd "OK", motor rotates clockwise
   --> (*)
 else
-  --> LED and buzzer turns on
-  --> display on lcd "NOK"
+  --> display on lcd "NOK", motor rotates anticlockwise
 endif
 @enduml
 ```
