@@ -1,0 +1,224 @@
+*** Settings ***
+Documentation    Embedded Systems Project Test Cases
+
+*** Test Cases ***
+Test Case 1: Check the functionalty of the temperature sensor
+    [Documentation]    [test if the sensor detects a value on the lcd]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+     (Perform the action to be tested)
+     make the sensor detect temperature
+
+     (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the temperature sensor will read a value and displays it on the lcd
+    outcome:  the lcd displays the detected value from the sensor
+
+Test Case 2: Test the rotation of the motor
+    [Documentation]    [the motor will rotate clockwise if value within range]
+    
+    (Set up the test environment)
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+
+    (Perform the action to be tested)
+    [Action steps]
+    connect the battery to the motor driver which will be connected to the motor, modify limits with buttons 
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate clockwise 
+    outcome: The motor rotates clockwise
+    
+Test Case 3: if the limits are 0
+    [Documentation]    [Both lower and upper limits are 0]
+    
+    (Set up the test environment)
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+
+    (Perform the action to be tested)
+    [Action steps]
+    change the limit for both of the higher and lower limits of the code to 0 from the button
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor  will rotate anticlock wise
+    outcome: The motor will rotate anticlock wise.
+
+Test Case 4: Verfying the limits
+    [Documentation]    [upper and lower limits are equal and greater than 0]
+    
+    (Set up the test environment)
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+
+    (Perform the action to be tested)
+    [Action steps]
+    Change both of the limits to the same value but greater than 0
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate anticlock wise as it will be considered out of range
+    outcome: The motor rotates anticlock wise
+
+Test Case 5: Check the limitts of the temperature sensor
+    [Documentation]    [give input to temperature sensor]
+    
+    (Set up the test environment)
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    make the sensor detect a value from the lower to the upper limit
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will roate clockwise and will function as long as the input value is withinthe limit  range
+    outcome: The motor will function when the is in the limit range
+
+Test Case 6: Check the functionalty of the pushbuttons
+    [Documentation]    [press all of the buttons togethers]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    press both of the buttons responsible for the limits at the same time 
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that there will be a change in both limits but an inconsistent one because we cannot press all of buttons at the same rate
+    outcome: inconsistent change in both limits 
+
+Test Case 7: Check the functionalty of the motor for the upper limit
+    [Documentation]    [use a value higher than the upper limit to check if the motor functions correctly]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    make the sensor detect a value bigger than the higher limit value
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate anticlock wise as soon as the input value from the sensor gets bigger than the higher limit
+    outcome: the motor rotates anticlockwise  as the value gets past the upper limit
+
+Test Case 8: Check the functionalty of the motor for the lower limit
+    [Documentation]    [use a value that is inferiour than the lower limit to check the rotation of the motor]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    make the sensor detect a value smaller than the lower limit value.
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate anticlock wise  because the given input value from the sensor is smaller than the lower limit value 
+    outcome: the motor roates anticlock wise  when the value is inferior than the lower limit 
+
+Test Case 9: Check the functionalty of the lcd
+    [Documentation]    [Check if the lcd is working properly]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    give the sensor a input value within the given range 
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate clockwise as the value is in between the range and the lcd will print ok
+    outcome: The motor rotates clockwise  and the lcd funtions properly and prints ok
+
+Test Case 10: Check if the higher limit value is included
+    [Documentation]    [Check if limit value will be included in the range]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    set the higher limit to 700
+    give the sensor an input value that is  equal to the value of the higher limit
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate anticlock wise to make sure that the exact value limit is considered to be out of range
+    outcome: the motor rotates anticlock wise
+
+Test Case 11: Check if the lower limit can be lower than 0
+    [Documentation]    [Check if the lower limit value can be past 0]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    keep decreasing the lower value limit from the push button 
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the new lower limit value will be displayed on the lcd 
+    outcome:the new lower limit value is displayed on the lcd
+
+Test Case 12: Check if the functionality of the third push button:
+    [Documentation]    [Check if the third button actually toggles]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    Use the push buttons of the limits then use the toggle push button
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the each time the toggle push button is pressed the button of limit pressed before it will be responsible of the other limit
+    outcome:The push buttons of the limits are inversed as the toggle push button is pressed after it.
+
+Test Case 13: Check the functionality of the pwm at minimum speed:
+    [Documentation]    [Check if the pwm conntrols motor speed]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    change the motor speed variable in the code to 0
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will not rotate 
+    outcome:the motor doesn't perform any action.
+
+Test Case 14: Check the functionality of the pwm at 50% of maximum speed:
+    [Documentation]    [Check if the pwm conntrols motor speed]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    change the motor speed variable in the code to 126
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate 
+    outcome:the motor rotates at 50% of maximum speed.
+
+Test Case 15: Check the functionality of the pwm at maximum speed:
+    [Documentation]    [Check if the pwm conntrols motor speed]
+    
+    [Setup steps]
+    connect the arduino to the pc 
+    connect the circuit with the components to the arduino uno board
+    (Perform the action to be tested)
+    change the motor speed variable in the code to 255.
+
+    (Verify the expected outcome)
+    [Assertion steps]
+    the expected outcome is that the motor will rotate at maximum speed
+    outcome:the motor rotates at maximum speed.
