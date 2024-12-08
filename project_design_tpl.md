@@ -27,10 +27,20 @@ This section describes where this module resides in the context of the software 
 ```plantuml
 @startuml
 rectangle ADC_LCD_System {
-    rectangle Analog digital convertor Module
-    rectangle LCD Module
-    rectangle UART communication Module
-    rectangle main application Logic
+    rectangle "Analog digital convertor Module"
+    rectangle "LCD Module"
+    rectangle "UART communication Module"
+    rectangle "main application Logic"
+    rectangle "I2C Module"
+    rectangle "Motor Module"
+    rectangle "PWM Module"
+
+    "main application Logic" --> "I2C Module" : communicates
+    "main application Logic" --> "UART communication Module" : communicates
+    "I2C Module" --> "LCD Module" : communicates
+    "UART communication Module" --> "Analog digital convertor Module" : communicates
+    "Analog digital convertor Module" --> "PWM Module" : communicates
+    "PWM Module" --> "Motor Module" : communicates
 }
 @enduml
 
