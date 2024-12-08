@@ -130,5 +130,3 @@ Any required hardware/software or system configuration that can be adjusted a he
 |   SCL_CLOCK  |     100 kHz       |     sets the clock speed for the I2C communication "frequency of the SCL line"       |
 |   refrenceVoltage  |     500      |     used in calculations of temperature from the sensor      |
 |   MotorSpeed  |     255       |     sets the speed of the motor       |
-|   F_CPU  |     16 MHz       |    sets the CPU clock frequency for I2C communication      |
-|   SCL_CLOCK  |     100 kHz       |     sets the clock speed for the I2C communication "frequency of the SCL line"       |
