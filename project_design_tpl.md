@@ -26,7 +26,7 @@ This report describes how an Arduino-based system works and how it was designed.
 This section describes where this module resides in the context of the software architecture
 ```plantuml
 @startuml
-rectangle ADC_LCD_System {
+rectangle AC_control_System {
     rectangle "Analog digital convertor Module"
     rectangle "LCD Module"
     rectangle "UART communication Module"
