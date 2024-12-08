@@ -28,8 +28,8 @@ int main(void) {
     Adc_Init();
     Uart_Init();
     LCD_Init();
-    PWM_init();       // Initialize PWM
-    DC_Init();        // Initialize motor pins
+    PWM_init();       
+    DC_Init();      
 
     while (1) {
         _delay_ms(200);
