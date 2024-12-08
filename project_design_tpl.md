@@ -122,5 +122,9 @@ package "pkg" {
 Any required hardware/software or system configuration that can be adjusted a header file shall be detailed in this section. This can be placed in the table below.
 | Name | Value range | Description |
 |------|-------------|-------------|
-|   limit   |     400-700        |     Uses upper and lower limit to create a range        |
+|   limit   |     lowerlimit - upperlimit        |     Uses upper and lower limit to create a range        |
+|   lowerlimit   |     loweraddress        |   uses the eeprom memory to store the value of the limit        |
+|   upperlimit   |     upperaddress        |   uses the eeprom memory to store the value of the limit        |
 |   Baudrate  |     9600       |     sets the baudrate       |
+|   refrenceVoltage  |     500      |     used in calculations of temperature from the sensor      |
+|   MotorSpeed  |     255       |     sets the speed of the motor       |
