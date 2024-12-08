@@ -4,7 +4,7 @@
 |:------------------------|:-----------------------------------------------------|
 | **Status**              | `Inspection`                          |
 | **Version**             | `1.0`                                                |
-| **Date**                | `12/11/2024`                                         |
+| **Date**                | `07/12/2024`                                         |
 
 ## Introduction
 
@@ -72,13 +72,13 @@ Typically a module consists of C and H files but other file types may exist. Lis
 
 | File name | Contents                             |
 |-----------|--------------------------------------|
-| Adc_pot.h | header for adc functions        |
+| analogdigital.h | header for adc functions        |
 | Lcd.h     | header for lcd functions                |
 | Uart.h    | header for uart communications functions |
-| Adc_pot.ino | Includes all adc functions and initlization         |
+| Aanalogdigital.ino | Includes all adc functions and initlization         |
 | Lcd.ino    | Includes all Lcd functions and initlization                |
 | Uart.ino   | Includes all uart communications functions and initlization |
-| alexprojec.ino   | Includes the main code for the apllication |
+| ACcontrolUnit.ino   | Includes the main code for the apllication |
 ### Include Structure
 
 If there is a complex file structure e.g. more than one c-file or more than two h-files use a diagram to explain the relationship between the source and dependent include files.
