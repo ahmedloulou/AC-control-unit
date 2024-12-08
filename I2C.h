@@ -8,11 +8,10 @@
 #define F_CPU 16000000UL
 #define SCL_CLOCK 100000L
 
-void I2C_Init(void);               // Initialize I2C
-void I2C_Start(void);              // Send start condition
-void I2C_Stop(void);               // Send stop condition
-void I2C_Write(uint8_t data);      // Write byte to I2C
-uint8_t I2C_ReadAck(void);         // Read byte with ACK
-uint8_t I2C_ReadNack(void);        // Read byte with NACK
-
+void I2C_Init(void);              
+void I2C_Start(void);           
+void I2C_Stop(void);              
+void I2C_Write(uint8_t data);     
+uint8_t I2C_ReadAck(void);      
+uint8_t I2C_ReadNack(void);     
 #endif
