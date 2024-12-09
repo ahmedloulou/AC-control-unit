@@ -4,7 +4,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-// Define clock speed
+
 #define F_CPU 16000000UL
 #define SCL_CLOCK 100000L
 
