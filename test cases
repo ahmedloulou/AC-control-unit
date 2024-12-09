@@ -11,10 +11,10 @@ Test Case 1: Check the functionalty of the temperature sensor
      (Perform the action to be tested)
      make the sensor detect temperature
 
-     (Verify the expected outcome)
+    (Verify the expected outcome)
     [Assertion steps]
     the expected outcome is that the temperature sensor will read a value and displays it on the lcd
-    outcome:  the lcd displays the detected value from the sensor
+    outcome:the lcd displays the detected value from the sensor
 
 Test Case 2: Test the rotation of the motor
     [Documentation]    [the motor will rotate clockwise if value within range]
@@ -31,9 +31,9 @@ Test Case 2: Test the rotation of the motor
     (Verify the expected outcome)
     [Assertion steps]
     the expected outcome is that the motor will rotate clockwise 
-    outcome: The motor rotates clockwise
+    outcome:The motor rotates clockwise
     
-Test Case 3: if the limits are 0
+Test Case 3: if both limits are 0
     [Documentation]    [Both lower and upper limits are 0]
     
     (Set up the test environment)
@@ -43,7 +43,7 @@ Test Case 3: if the limits are 0
 
     (Perform the action to be tested)
     [Action steps]
-    change the limit for both of the higher and lower limits of the code to 0 from the button
+    change the limit for both of the higher and lower limits of the code to 0 from the buttons
 
     (Verify the expected outcome)
     [Assertion steps]
@@ -67,7 +67,7 @@ Test Case 4: Verfying the limits
     the expected outcome is that the motor will rotate anticlock wise as it will be considered out of range
     outcome: The motor rotates anticlock wise
 
-Test Case 5: Check the limitts of the temperature sensor
+Test Case 5: Check the limits of the temperature sensor
     [Documentation]    [give input to temperature sensor]
     
     (Set up the test environment)
@@ -75,12 +75,12 @@ Test Case 5: Check the limitts of the temperature sensor
     connect the arduino to the pc 
     connect the circuit with the components to the arduino uno board
     (Perform the action to be tested)
-    make the sensor detect a value from the lower to the upper limit
+    make the sensor detect a value between the lower to the upper limit
 
     (Verify the expected outcome)
     [Assertion steps]
-    the expected outcome is that the motor will roate clockwise and will function as long as the input value is withinthe limit  range
-    outcome: The motor will function when the is in the limit range
+    the expected outcome is that the motor will roate clockwise and will function as long as the input value is within the limit  range
+    outcome: The motor will function when the value is within the limit range
 
 Test Case 6: Check the functionalty of the pushbuttons
     [Documentation]    [press all of the buttons togethers]
@@ -89,7 +89,7 @@ Test Case 6: Check the functionalty of the pushbuttons
     connect the arduino to the pc 
     connect the circuit with the components to the arduino uno board
     (Perform the action to be tested)
-    press both of the buttons responsible for the limits at the same time 
+    press the buttons responsible for the limits at the same time 
 
     (Verify the expected outcome)
     [Assertion steps]
@@ -136,7 +136,7 @@ Test Case 9: Check the functionalty of the lcd
     (Verify the expected outcome)
     [Assertion steps]
     the expected outcome is that the motor will rotate clockwise as the value is in between the range and the lcd will print ok
-    outcome: The motor rotates clockwise  and the lcd funtions properly and prints ok
+    outcome: The motor rotates clockwise  and the lcd funtions properly and prints "Ok"
 
 Test Case 10: Check if the higher limit value is included
     [Documentation]    [Check if limit value will be included in the range]
@@ -167,19 +167,19 @@ Test Case 11: Check if the lower limit can be lower than 0
     the expected outcome is that the new lower limit value will be displayed on the lcd 
     outcome:the new lower limit value is displayed on the lcd
 
-Test Case 12: Check if the functionality of the third push button:
-    [Documentation]    [Check if the third button actually toggles]
+Test Case 12: Check the functionality of EEPROM:
+    [Documentation]    [Check if the EEPROM stores limits]
     
     [Setup steps]
     connect the arduino to the pc 
     connect the circuit with the components to the arduino uno board
     (Perform the action to be tested)
-    Use the push buttons of the limits then use the toggle push button
+    use the buttons to make booth upper and lower limit then turn the LCD off
 
     (Verify the expected outcome)
     [Assertion steps]
-    the expected outcome is that the each time the toggle push button is pressed the button of limit pressed before it will be responsible of the other limit
-    outcome:The push buttons of the limits are inversed as the toggle push button is pressed after it.
+    the expected outcome is that the LCD will display both upper and lower limits that were shown before turning the LCD off
+    outcome:The LCD displays both limits that were shown before it was turned off.
 
 Test Case 13: Check the functionality of the pwm at minimum speed:
     [Documentation]    [Check if the pwm conntrols motor speed]
